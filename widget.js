@@ -9,7 +9,7 @@
   }
 
   const workspaceId = script.getAttribute("data-workspace-id") || script.getAttribute("data-helpdesk-workspace-id");
-  const baseUrl = new URL(script.src).origin;
+  const baseUrl = script.getAttribute("data-backend-url") || new URL(script.src).origin;
 
   // 2. Inject responsive widget wrapper container
   const container = document.createElement("div");
